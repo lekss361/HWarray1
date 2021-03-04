@@ -43,7 +43,7 @@ namespace HW
             return Result;
         }
 
-        public static int WhichQuarterQoes2(int X, int Y)
+        public static int WhichQuarterBelongs2(int X, int Y)
         {
             int Result;
 
@@ -110,7 +110,7 @@ namespace HW
 
             if (tmp<0)
             {
-                throw new Exception ("Корней нет");
+                throw new Exception ("недопустимое значение Корней нет");
             }
 
             Result[0] = (-Y + MathF.Sqrt(tmp)) / (2 * X);
@@ -126,9 +126,9 @@ namespace HW
             string[] Numbers1 = new string[10] { "десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестьнадцать", "семнадцать", "восемнадцать", "девятнадцать" };
             string[] Numbers2 = new string[10] { "","","двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто" };
 
-            if (X<0)
+            if (X<10)
             {
-                throw new Exception("недопустимое значение, X<0");
+                throw new Exception("недопустимое значение, X<10");
             }
             int tmp = X % 10;
             int tmp1 = X / 10;
