@@ -4,9 +4,31 @@ using System.Text;
 
 namespace HW
 {
-    public static class HW1Array
+    public static class ArrayRank1
     {
-        public static int MinOfArray1(int[] Array)
+        public static void PrintInfoTask()
+        {
+            string[] InfoTask = new string[10]
+            {
+              "1. Найти минимальный элемент массива",
+              "2. Найти максимальный элемент массива",
+              "3. Найти индекс минимального элемента массива",
+              "4. Найти индекс максимального элемента массива",
+              "5. Посчитать сумму элементов массива с нечетными индексами",
+              "6. Сделать реверс массива (массив в обратном направлении)",
+              "7. Посчитать количество нечетных элементов массива",
+              "8. Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2,  или для 12345 - 45312.",
+              "9. Отсортировать массив по возрастанию одним из способов:  пузырьком(Bubble), выбором (Select) или вставками (Insert))",
+              "10. Отсортировать массив по убыванию одним из способов, (отличным от способа в 9-м задании) :  пузырьком(Bubble), выбором (Select) или вставками (Insert))"
+            };
+
+            for (int i = 0; i < InfoTask.Length; i++)
+            {
+                Console.WriteLine(InfoTask[i]);
+            }
+        }
+
+        public static int MinOfArray_1(int[] Array)
         {
             int MinNumber=Array[0];
 
@@ -20,7 +42,7 @@ namespace HW
             return MinNumber;
         }
         
-        public static int MaxOfArray2(int[] Array)
+        public static int MaxOfArray_2(int[] Array)
         {
             int MaxNumber=Array[0];
 
@@ -34,7 +56,7 @@ namespace HW
             return MaxNumber;
         }
 
-        public static int IndexMinOfArray3(int[] Array)
+        public static int IndexMinOfArray_3(int[] Array)
         {
             int IndexMinNumber=Array[0];
 
@@ -48,7 +70,7 @@ namespace HW
             return IndexMinNumber;
         }
 
-        public static int IndexMaxOfArray4(int[] Array)
+        public static int IndexMaxOfArray_4(int[] Array)
         {
             int IndexMaxNumber=Array[0];
 
@@ -61,7 +83,7 @@ namespace HW
             }
             return IndexMaxNumber;
         }
-        public static int SummOddIndexOfArray5(int[] Array)
+        public static int SummOddIndexOfArray_5(int[] Array)
         {
             int Summ=0;
 
@@ -75,18 +97,18 @@ namespace HW
             return Summ;
         }
 
-        public static int [] BackwardArray6(int[] Array)
+        public static int [] BackwardArray_6(int[] Array)
         {
             int[] BackwardArray = new int[Array.Length];
 
             for (int i = 0; i < Array.Length; i++)
             {
-                BackwardArray[i] = Array[Array.Length -1 - i];
+                BackwardArray[i] = Array[Array.Length - i];
             }
             return BackwardArray;
         }
 
-        public static int QountOddNumberOfArray7(int[] Array)
+        public static int QountOddNumberOfArray_7(int[] Array)
         {
             int QountOddNumber=0;
 
@@ -100,7 +122,7 @@ namespace HW
             return QountOddNumber;
         }
 
-        public static int[] BackwardHalfArray8(int[] Array)
+        public static int[] BackwardHalfArray_8(int[] Array)
         {
             int[] BackwardHalfArray = new int[Array.Length];
             int MidIndex=Array.Length%2==0?Array.Length/2:Array.Length/2+1;
@@ -113,7 +135,7 @@ namespace HW
             return BackwardHalfArray;
         }
 
-        public static int[] BubleSortArray9(int[] Array)
+        public static int[] BubleSortArray_9(int[] Array)
         {
             int tmp;
             for (int i = 1; i < Array.Length; i++)
@@ -130,7 +152,7 @@ namespace HW
             }
             return Array;
         }
-        public static int[] SelectSortArray10(int[] Array)
+        public static int[] SelectSortArray_10(int[] Array)
         {
             int tmp=0;
             int tmp2 = 0;

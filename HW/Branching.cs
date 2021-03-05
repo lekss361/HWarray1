@@ -138,7 +138,7 @@ namespace HW
                 Result = $"{Numbers1[tmp]}";
             }else
             {
-                Result = $"{Numbers2[tmp1]} {Numbers1[tmp]}";
+                Result = $"{Numbers2[tmp1]} {Numbers[tmp]}";
             }
 
             return Result;
