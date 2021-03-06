@@ -104,19 +104,15 @@ namespace HW
         {
             bool Count=false;
             if (Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1]
-               && Array[height, Lenght] > Array[height - 1, Lenght]&& Array[height, Lenght] > Array[height + 1, Lenght])
-            {
-                Count = true;
-            }
-            else if (Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
-                    Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1]||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1]||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1]||
-                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height + 1, Lenght]||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1]||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1]||
-                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height - 1, Lenght]
-                    )
+                    && Array[height, Lenght] > Array[height - 1, Lenght]&& Array[height, Lenght] > Array[height + 1, Lenght]|| 
+                    Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
+                    Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
+                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
+                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
+                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height + 1, Lenght] ||
+                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
+                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
+                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height - 1, Lenght])
             {
                 Count = true;
             }

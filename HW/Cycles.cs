@@ -34,6 +34,11 @@ namespace HW
         {
             int Result = 1;
 
+            if (X == 0 || Y <= 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
+
             for (int i = 0; i < Y; i++)
             {
                 Result = Result * X;
@@ -46,6 +51,11 @@ namespace HW
         {
             int[] NoneResidue = new int[1000 / X];
             int tmp = 0;
+
+            if (X <= 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
 
             for (int i = 1; i <= 1000; i++)
             {
@@ -63,6 +73,11 @@ namespace HW
         {
             int tmp = 1;
 
+            if (X <= 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
+
             while (tmp * tmp < X)
             {
                 tmp++;
@@ -76,6 +91,11 @@ namespace HW
         public static int GreatestDivisor_4(int X)
         {
             int Result = 0;
+
+            if (X <= 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
 
             for (int i = 1; i < X - 1; i++)
             {
@@ -114,6 +134,11 @@ namespace HW
         {
             int tmp = 1, tmp1 = 1, Result = 0;
 
+            if (X < 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
+
             for (int i = 0; i < X; i++)
             {
                 Result = tmp + tmp1;
@@ -127,6 +152,11 @@ namespace HW
         public static int MaxDividerMetodEuclid_7(int X, int Y)
         {
             int Result = 0;
+
+            if (X == 0 || Y == 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
 
             while (X != 0 && Y != 0)
             {
@@ -153,6 +183,11 @@ namespace HW
             double MaxNumber = (int)Math.Pow(10, DigitCount);
             double MidNumber = 0;
             double Answer = Inaccuracy + 1;
+
+            if (X < 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
 
             while (Answer > Inaccuracy)
             {
@@ -205,6 +240,11 @@ namespace HW
         {
             int Result = 0;
             int DigitCount = (int)Math.Log10(X) + 1;
+
+            if (X < 0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
 
             for (int i = 0; i < DigitCount; i++)
             {

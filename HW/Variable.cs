@@ -22,12 +22,12 @@ namespace HW
             }
         }
 
-        public static int ExampleSolution1(int X, int Y)
+        public static int ExampleSolution_1(int X, int Y)
         { 
             return (5 * X + Y * Y) / (Y - X);
         }
 
-        public static int[] SwapVariables2(int X,int Y)
+        public static int[] SwapVariables_2(int X,int Y)
         {
             int tmp = X;
             X = Y;
@@ -36,18 +36,23 @@ namespace HW
             return Result;
         }
 
-        public static double[] DivisionResidueVariables3(int X, int Y)
+        public static double[] DivisionResidueVariables_3(int X, int Y)
         {
+            if (X==0||Y==0)
+            {
+                throw new Exception("недопустимые значения ");
+            }
+
             double[] Result = new double[2] { X/Y, X%Y };
             return Result;
         }
 
-        public static double LinearEquationSolution4(int X, int Y, int Z)
+        public static double LinearEquationSolution_4(int X, int Y, int Z)
         {
             return (Z - Y) / X;
         }
 
-        public static string EquationStraight5(int X, int Y, int Z, int Q)
+        public static string EquationStraight_5(int X, int Y, int Z, int Q)
         {
             int tmp1 = (Y - Q) / (X - Z);
             int tmp2 = Q - tmp1 * Z;
