@@ -30,6 +30,11 @@ namespace HW
 
         public static int MinOfArray_1(int[] Array)
         {
+            if (Array.Length==0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int MinNumber=Array[0];
 
             for (int i = 0; i < Array.Length; i++)
@@ -44,6 +49,11 @@ namespace HW
         
         public static int MaxOfArray_2(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int MaxNumber=Array[0];
 
             for (int i = 0; i < Array.Length; i++)
@@ -58,6 +68,11 @@ namespace HW
 
         public static int IndexMinOfArray_3(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int IndexMinNumber=Array[0];
 
             for (int i = 0; i < Array.Length; i++)
@@ -72,6 +87,11 @@ namespace HW
 
         public static int IndexMaxOfArray_4(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int IndexMaxNumber=Array[0];
 
             for (int i = 0; i < Array.Length; i++)
@@ -85,6 +105,11 @@ namespace HW
         }
         public static int SummOddIndexOfArray_5(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int Summ=0;
 
             for (int i = 0; i < Array.Length; i++)
@@ -99,17 +124,27 @@ namespace HW
 
         public static int [] BackwardArray_6(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int[] BackwardArray = new int[Array.Length];
 
             for (int i = 0; i < Array.Length; i++)
             {
-                BackwardArray[i] = Array[Array.Length - i];
+                BackwardArray[i] = Array[Array.Length - i-1];
             }
             return BackwardArray;
         }
 
         public static int QountOddNumberOfArray_7(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int QountOddNumber=0;
 
             for (int i = 0; i < Array.Length; i++)
@@ -124,19 +159,34 @@ namespace HW
 
         public static int[] BackwardHalfArray_8(int[] Array)
         {
-            int[] BackwardHalfArray = new int[Array.Length];
-            int MidIndex=Array.Length%2==0?Array.Length/2:Array.Length/2+1;
-
-            for (int i = 0; i < MidIndex; i++)
+            int j = Array.Length-1;
+            if (Array.Length == 0)
             {
-                BackwardHalfArray[i] = Array[MidIndex + i];
-                BackwardHalfArray[MidIndex + i] = Array[i];
+                throw new ArgumentException("array lenght==0");
             }
-            return BackwardHalfArray;
+
+            int tmp;
+            int i2;
+            i2 = Array.Length - 1;
+
+            for (int i = Array.Length / 2 - 1; i >= 0; i--)
+            {
+                tmp = Array[i];
+                Array[i] = Array[i2];
+                Array[i2] = tmp;
+                i2--;
+            }
+
+            return Array;
         }
 
         public static int[] BubleSortArray_9(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int tmp;
             for (int i = 1; i < Array.Length; i++)
             {
@@ -154,6 +204,11 @@ namespace HW
         }
         public static int[] SelectSortArray_10(int[] Array)
         {
+            if (Array.Length == 0)
+            {
+                throw new ArgumentException("array lenght==0");
+            }
+
             int tmp=0;
             int tmp2 = 0;
             for (int i = 0; i < Array.Length; i++)

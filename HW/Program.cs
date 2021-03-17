@@ -6,6 +6,16 @@ namespace HW
     {
         static void Main(string[] args)
         {
+            int[] array1 = new int[] { 4, 2, 3, 1,5 };
+            array1 = ArrayRank1.BackwardHalfArray_8(array1);
+            for (int i = 0; i < array1.Length; i++)
+            {
+                Console.Write($"{array1[i]} ;");
+            }
+           
+            
+
+
             int[,] array = new int[3,5];
 
             Random random = new Random();

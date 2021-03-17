@@ -23,7 +23,12 @@ namespace HW
         }
 
         public static int ExampleSolution_1(int X, int Y)
-        { 
+        {
+            if (X == Y)
+            {
+                throw new Exception("А не должно быть равно В");
+            }
+
             return (5 * X + Y * Y) / (Y - X);
         }
 
@@ -49,13 +54,20 @@ namespace HW
 
         public static double LinearEquationSolution_4(int X, int Y, int Z)
         {
+            if (X == 0)
+            {
+                throw new Exception("X должно быть отлично от 0");
+            }
+
             return (Z - Y) / X;
         }
 
-        public static string EquationStraight_5(int X, int Y, int Z, int Q)
+        public static string EquationStraight_5(double X, double Y, double Z, double Q)
         {
-            int tmp1 = (Y - Q) / (X - Z);
-            int tmp2 = Q - tmp1 * Z;
+            double tmp1 = (Y - Q) / (X - Z);
+            tmp1 = Math.Round(tmp1, 2);
+            double tmp2 = Q - tmp1 * Z;
+            tmp2 = Math.Round(tmp2, 2);
             return $"Y={tmp1}x+{tmp2}";
         }
     }

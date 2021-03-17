@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HW
 {
-    class Cycles
+   public static class Cycles
     {
         public static void PrintInfoTask()
         {
@@ -112,7 +112,7 @@ namespace HW
         {
             int tmp = 0, Result = 0;
 
-            if (X < Y)
+            if (X > Y)
             {
                 tmp = X;
                 X = Y;
@@ -191,11 +191,11 @@ namespace HW
 
             while (Answer > Inaccuracy)
             {
-                int MidNUmberCoube = (int)Math.Pow(MidNumber, 3.0);
-
                 MidNumber = (MinNumber + MaxNumber) / 2;
 
-                if (MidNUmberCoube > X || MidNumber > X)
+                int MidNUmberCoube = (int)Math.Pow(MidNumber, 3.0);
+
+                if (MidNUmberCoube > X && MidNumber > X)
                 {
                     MaxNumber = MidNumber;
                 }
@@ -213,6 +213,8 @@ namespace HW
                 }
             }
 
+            Result[0] = Math.Round(Result[0], 1);
+            Result[1] = Math.Round(Result[1], 1);
             return Result;
         }
 
@@ -257,7 +259,7 @@ namespace HW
         }
 
 
-        public static int[] SummEvenMoreSummOdd(int X)
+        public static int[] SummEvenMoreSummOdd_11(int X)
         {
             int Even = 0, Odd = 0, tmp = 0, tmp1 = 0,tmp2=0;
             int[] Result = new int[1];
@@ -296,7 +298,7 @@ namespace HW
             return Result;
         }
 
-        public static bool CoincidenceNumbers(int X, int Y)
+        public static bool CoincidenceNumbers_12(int X, int Y)
         {
             int DigitCount = (int)Math.Log10(X) + 1;
             int DigitCount1 = (int)Math.Log10(Y) + 1;

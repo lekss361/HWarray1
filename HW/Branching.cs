@@ -80,7 +80,7 @@ namespace HW
                     X = Y;
                     Y = tmp;
                 }
-                else if (X > Z)
+                else if (Y > Z)
                 {
                     tmp = Y;
                     Y = Z;
@@ -119,7 +119,7 @@ namespace HW
             return Result;
         }
 
-        public static string NumbersInWords(int X)
+        public static string NumbersInWords5(int X)
         {
             string Result;
             string[] Numbers = new string[10] { "ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };

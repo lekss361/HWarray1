@@ -4,10 +4,15 @@ using System.Text;
 
 namespace HW
 {
-    class ArrayRank2
+    public class ArrayRank2
     {
         public static int MinOfArray_1(int[,] Array)
         {
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
+            {
+                throw new ArgumentException("Массив пуст");
+            }
+
             int MinNumber = 0;
 
             for (int i = 0; i < Array.GetLength(0); i++)
@@ -26,6 +31,11 @@ namespace HW
 
         public static int MaxOfArray_2(int[,] Array)
         {
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
+            {
+                throw new ArgumentException("Массив пуст");
+            }
+
             int MaxNumber = 0;
 
             for (int i = 0; i < Array.GetLength(0); i++)
@@ -42,48 +52,65 @@ namespace HW
             return MaxNumber;
         }
 
-        public static (int,int) IndexMinOfArray_3(int[,] Array)
+        public static int[] IndexMinOfArray_3(int[,] Array)
         {
-            int IndexMinNumberX = 0;
-            int IndexMinNumberY = 0;
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
+            {
+                throw new ArgumentException("Массив пуст");
+            }
+
+            int[] result = new int[2];
+            result[0] = 0;
+            result[1] = 0;
 
             for (int i = 0; i < Array.GetLength(0); i++)
             {
                 for (int j = 0; j < Array.GetLength(1); j++)
                 {
-                    if (Array[IndexMinNumberX,IndexMinNumberY] > Array[i, j])
+                    if (Array[result[0],result[1]] > Array[i, j])
                     {
-                        IndexMinNumberX = i;
-                        IndexMinNumberY = j;
+                        result[0] = i;
+                        result[1] = j;
                     }
 
                 }
             }
             
-            return (IndexMinNumberX,IndexMinNumberY);
+            return result;
         }
 
-        public static (int,int) IndexMaxOfArray_4(int[,] Array)
+        public static int[] IndexMaxOfArray_4(int[,] Array)
         {
-            int IndexMaxNumberX = 0;
-            int IndexMaxNumberY = 0;
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
+            {
+                throw new ArgumentException("Массив пуст");
+            }
+
+            int[] result = new int[2];
+            result[0] = 0;
+            result[1] = 0;
 
             for (int i = 0; i < Array.GetLength(0); i++)
             {
                 for (int j = 0; j < Array.GetLength(1); j++)
                 {
-                    if (Array[IndexMaxNumberX, IndexMaxNumberY] < Array[i, j])
+                    if (Array[result[0], result[1]] < Array[i, j])
                     {
-                        IndexMaxNumberX = i;
-                        IndexMaxNumberY = j;
+                        result[0] = i;
+                        result[1] = j;
                     }
 
                 }
             }
-            return (IndexMaxNumberX,IndexMaxNumberY);
+            return result;
         }
         public static int NumberMoreNeighbors_5(int[,] Array)
         {
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
+            {
+                throw new ArgumentException("Массив пуст");
+            }
+
             int Count = 0;
 
             for (int i = 0; i < Array.GetLength(0); i++)
@@ -102,89 +129,69 @@ namespace HW
 
         private static bool MoreNeighbors(int height, int Lenght, int[,] Array)
         {
-            bool Count=false;
-            if (Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1]
-                    && Array[height, Lenght] > Array[height - 1, Lenght]&& Array[height, Lenght] > Array[height + 1, Lenght]|| 
-                    Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
-                    Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
-                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height + 1, Lenght] ||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ||
-                    Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ||
-                    Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height - 1, Lenght])
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
             {
-                Count = true;
+                throw new ArgumentException("Массив пуст");
             }
 
-            return Count;
+            bool Count=false;           
 
-            //if (height==0&&Lenght==0)
-            //{
-            //    Count = Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ? true : false;
-            //}
-            //else if (height==0&&Lenght==Array.GetLength(1)-1)
-            //{
-            //    Count = Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
-            //}
-            //else if (height==Array.GetLength(0)-1&&Lenght==0)
-            //{
-            //    Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ? true : false;
-            //}
-            //else if (height == Array.GetLength(0)-1 && Lenght == Array.GetLength(1) - 1)
-            //{
-            //    Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
-            //}
-            //else if (height == 0)
-            //{
-            //    Count = Array[height, Lenght] > Array[height, Lenght-1] && Array[height, Lenght] > Array[height, Lenght + 1]&& Array[height, Lenght] > Array[height + 1, Lenght] ? true : false;
-            //}
-            //else if (Lenght == 0)
-            //{
-            //    Count = Array[height, Lenght] > Array[height-1, Lenght] && Array[height, Lenght] > Array[height+1, Lenght ]&& Array[height, Lenght] > Array[height, Lenght+1] ? true : false;
-            //}
-            //else if (Lenght == Array.GetLength(1)-1)
-            //{
-            //    Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
-            //}
-            //else if (height == Array.GetLength(0)-1)
-            //{
-            //    Count = Array[height, Lenght] > Array[height, Lenght-1] && Array[height, Lenght] > Array[height, Lenght + 1]&& Array[height, Lenght] > Array[height - 1, Lenght] ? true : false;
-            //}
-            //else
-            //{
-            //    Count = Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] 
-            //            && Array[height, Lenght] > Array[height - 1, Lenght]&& Array[height, Lenght] > Array[height + 1, Lenght] ? true : false;
-            //}
-            //return Count;
+            if (height == 0 && Lenght == 0)
+            {
+                Count = Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ? true : false;
+            }
+            else if (height == 0 && Lenght == Array.GetLength(1) - 1)
+            {
+                Count = Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
+            }
+            else if (height == Array.GetLength(0) - 1 && Lenght == 0)
+            {
+                Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ? true : false;
+            }
+            else if (height == Array.GetLength(0) - 1 && Lenght == Array.GetLength(1) - 1)
+            {
+                Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
+            }
+            else if (height == 0)
+            {
+                Count = Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height + 1, Lenght] ? true : false;
+            }
+            else if (Lenght == 0)
+            {
+                Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght + 1] ? true : false;
+            }
+            else if (Lenght == Array.GetLength(1) - 1)
+            {
+                Count = Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] && Array[height, Lenght] > Array[height, Lenght - 1] ? true : false;
+            }
+            else if (height == Array.GetLength(0) - 1)
+            {
+                Count = Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1] && Array[height, Lenght] > Array[height - 1, Lenght] ? true : false;
+            }
+            else
+            {
+                Count = Array[height, Lenght] > Array[height, Lenght - 1] && Array[height, Lenght] > Array[height, Lenght + 1]
+                        && Array[height, Lenght] > Array[height - 1, Lenght] && Array[height, Lenght] > Array[height + 1, Lenght] ? true : false;
+            }
+            return Count;
         }
 
         public static int[,] BackwardMainDiagonalArray_6(int[,] Array)
         {
-            int[,] tmpArray = new int [Array.GetLength(1), Array.GetLength(0)];
-            
-            for (int i = 1; i < Array.GetLength(0); ++i)
+            if (Array.GetLength(0) < 1 || Array.GetLength(1) < 1)
             {
-                for (int j = 0; j < i; ++j)
-                {
-                    int tmp = Array[j, i];
-                    tmpArray[j, i] = Array[i, j];
-                    tmpArray[i, j] = tmp;
-                }
+                throw new ArgumentException("Массив пуст");
             }
 
-            if (Array.GetLength(0)!=Array.GetLength(1))
+            int[,] transposedArray = new int[Array.GetLength(1), Array.GetLength(0)];
+            for (int i = 0; i < Array.GetLength(0); i++)
             {
-                for (int i = 0; i < Array.GetLength(0); i++)
+                for (int j = 0; j < Array.GetLength(1); j++)
                 {
-                    for (int j = 0; j < Array.GetLength(1); j++)
-                    {
-                        tmpArray[j, i] = Array[i, j];
-                    }
+                    transposedArray[j, i] = Array[i, j];
                 }
             }
-
-            return tmpArray;
+            return transposedArray;
         }
     }
 }
